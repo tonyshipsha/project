@@ -5,6 +5,8 @@ total_ammo = len(choices)
 stakes = 500
 cancel_game = False
 
+
+
 print("6 rounds in the gun, 5 blank, 1 live, begin with a $500 stake, doubled after each survived round.")
 
 while choices: # While there are more rounds than 0, didn't know this one actually. 
