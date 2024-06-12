@@ -13,10 +13,12 @@ while choices: # While there are more rounds than 0, didn't know this one actual
         print("There aren't that many rounds left, but with a higher risk, comes higher stakes")
     play = input("Do you want to play? (yes/no): ").strip().lower()
     if play != 'yes':
-        print("--------------------------------------")
-        print("Game over!")
-        cancel_game = True
-        break    
+        play = input("Are you sure that you want to leave? (yes/no): ")
+        if play != "no":
+            print("--------------------------------------")
+            print("Game over!")
+            cancel_game = True
+            break
     
     player_turn = random.choice(choices) 
     choices.remove(player_turn)
