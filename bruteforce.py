@@ -10,30 +10,29 @@ tries = ["", "", "", "", "", ""]  # Increased to match the length of the PIN bei
 # Variable to store the current password attempt
 test_password = ""
 
-# Inform the user that the hacking process is starting
-print("Starting the hack...")
+if len(pin) == 6:
+    # Inform the user that the hacking process is starting
+    print("Starting the hack...")
+    # Loop until the correct PIN is found
+    while test_password != pin:
+        # Nested loops to iterate through all possible combinations of PIN digits
+        for a in possible_characters:
+            tries[0] = a  # First position in the PIN attempt
+            for b in possible_characters:
+                tries[1] = b  # Second position in the PIN attempt
+                for c in possible_characters:
+                    tries[2] = c  # Third position in the PIN attempt
+                    for d in possible_characters:
+                        tries[3] = d  # Fourth position in the PIN attempt
+                        for e in possible_characters:
+                            tries[4] = e  # Fifth position in the PIN attempt
+                            for f in possible_characters:
+                                tries[5] = f  # Sixth position in the PIN attempt
 
-# Loop until the correct PIN is found
-while test_password != pin:
-    # Nested loops to iterate through all possible combinations of PIN digits
-    for a in possible_characters:
-        tries[0] = a  # First position in the PIN attempt
-        for b in possible_characters:
-            tries[1] = b  # Second position in the PIN attempt
-            for c in possible_characters:
-                tries[2] = c  # Third position in the PIN attempt
-                for d in possible_characters:
-                    tries[3] = d  # Fourth position in the PIN attempt
-                    for e in possible_characters:
-                        tries[4] = e  # Fifth position in the PIN attempt
-                        for f in possible_characters:
-                            tries[5] = f  # Sixth position in the PIN attempt
-
-                            # Construct the current attempt at the PIN
-                            test_password = tries[0] + tries[1] + tries[2] + tries[3] + tries[4] + tries[5]
-
-                            # Print the current PIN attempt for user feedback
-                            print(test_password)
+                                # Construct the current attempt at the PIN
+                                test_password = tries[0] + tries[1] + tries[2] + tries[3] + tries[4] + tries[5]
+                                # Print the current PIN attempt for user feedback
+                                print(test_password)
 
                             # Check if the current attempt matches the PIN
                             if test_password == pin:
@@ -54,5 +53,8 @@ while test_password != pin:
         if test_password == pin:
             break  # Exit the first position loop if the PIN is found
 
-# Print the PIN once it has been successfully hacked
-print("The PIN is " + test_password)
+    # Print the PIN once it has been successfully hacked
+    print("The PIN is " + test_password)
+
+else:
+    print("Invalid PIN length, please enter a 6 digit PIN...")
