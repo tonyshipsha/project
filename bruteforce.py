@@ -34,24 +34,24 @@ if len(pin) == 6:
                                 # Print the current PIN attempt for user feedback
                                 print(test_password)
 
-                            # Check if the current attempt matches the PIN
+                                # Check if the current attempt matches the PIN
+                                if test_password == pin:
+                                    break  # Exit the innermost loop if the PIN is found
+
                             if test_password == pin:
-                                break  # Exit the innermost loop if the PIN is found
+                                break  # Exit the fifth position loop if the PIN is found
 
                         if test_password == pin:
-                            break  # Exit the fifth position loop if the PIN is found
+                            break  # Exit the fourth position loop if the PIN is found
 
                     if test_password == pin:
-                        break  # Exit the fourth position loop if the PIN is found
+                        break  # Exit the third position loop if the PIN is found
 
                 if test_password == pin:
-                    break  # Exit the third position loop if the PIN is found
+                    break  # Exit the second position loop if the PIN is found
 
             if test_password == pin:
-                break  # Exit the second position loop if the PIN is found
-
-        if test_password == pin:
-            break  # Exit the first position loop if the PIN is found
+                break  # Exit the first position loop if the PIN is found
 
     # Print the PIN once it has been successfully hacked
     print("The PIN is " + test_password)
