@@ -1,3 +1,7 @@
+import time
+
+start_time = time.time()
+
 # Prompt the user to input the PIN to be hacked
 pin = input("Assign a 6 numeric-character PIN: ")
 
@@ -58,3 +62,8 @@ if len(pin) == 6:
 
 else:
     print("Invalid PIN length, please enter a 6 digit PIN...")
+
+end_time = time.time()
+elapsed_time = end_time - start_time
+# Output the elapsed time
+print(f"Elapsed time: {elapsed_time} seconds")
